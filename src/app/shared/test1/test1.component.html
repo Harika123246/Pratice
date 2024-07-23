@@ -1,0 +1,19 @@
+<!-- <button routerLink="/test2">test2</button> -->
+ <div>
+<form [formGroup]="regForm">
+<div><label>UserName:</label>
+<input type="text" formControlName="uname" class="formcontrol w-10 m-2">
+<p *ngIf="regForm.get('uname')?.touched&&regForm.get('uname')?.hasError('required')"  class="text-danger">Username is required</p>
+</div>
+<div><label>Password:</label>
+<input type="password" formControlName="pwd" class="formcontrol w-10 m-2" ></div>
+<p *ngIf="regForm.get('pwd')?.touched&& regForm.get('pwd')?.hasError('required')"  class="text-danger">Password is required</p>
+<p *ngIf="regForm.get('pwd')?.touched && regForm.get('pwd')?.hasError('minlength')"  class="text-danger">Mininum length 6</p>
+<div><label>Email:</label>
+<input type ="email" formControlName="email" class="formcontrom w-10 m-2"></div>
+<p *ngIf="regForm.get('email')?.touched&& regForm.get('email')?.hasError('required')" class="text-danger">Email is required</p>
+<div>
+  <button [disabled]="regForm.invalid" class="btn btn-primary">Submit</button>
+</div>
+</form>
+</div>
