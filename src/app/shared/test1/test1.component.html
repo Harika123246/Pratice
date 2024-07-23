@@ -13,7 +13,7 @@
 <input type ="email" formControlName="email" class="formcontrom w-10 m-2"></div>
 <p *ngIf="regForm.get('email')?.touched&& regForm.get('email')?.hasError('required')" class="text-danger">Email is required</p>
 <div>
-  <button [disabled]="regForm.invalid" class="btn btn-primary">Submit</button>
+  <button [disabled]="regForm.invalid" class="btn btn-primary" (click)="update()">Submit</button>
 </div>
 </form>
 </div>

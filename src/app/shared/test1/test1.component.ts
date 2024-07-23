@@ -19,6 +19,10 @@ export class Test1Component implements OnInit{
    email :['',Validators.required]
   })
 }
+
+update(){
+  alert('submitted sucessfully');
+}
     
   }
 
